@@ -5,7 +5,7 @@ class CreateBooks < ActiveRecord::Migration[7.0]
       t.text :description
       t.date :publication_date
       t.string :cover_image
-      t.references :author, null: false, foreign_key: true
+      #t.references :author, null: false, foreign_key: true
 
       t.timestamps
     end

@@ -224,7 +224,7 @@ Example:
 
 👤 **Sneha Singh**
 
-- GitHub: 
+- GitHub: [@githubhandle](https://github.com/singhsneha01)
 - Twitter: 
 - LinkedIn: [Sneha Singh](https://www.linkedin.com/in/snehasingh19/)
 

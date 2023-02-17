@@ -13,7 +13,9 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :users
-      resources :books
+      resources :books do
+        resources :reviews
+      end
 
       #get 'books', to: 'books#index'
     end

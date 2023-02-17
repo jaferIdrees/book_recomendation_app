@@ -2,9 +2,16 @@ class Api::V1::BooksController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    render json: "TEST"
+    render json: Book.all
   end
 
+  def show
+    book = Book.find(params[:id])
+    reviews = book.reviews.includes(:user)
+    rev = []
+    reviews.each {|review| rev << {content: review[:content], rating: review[:rating], full_name: review.user[:full_name]} }
+    render json: {book: book, reviews: rev}
+  end
   def create
     @book = Book.find_by(isbn: book_params[:isbn])
 

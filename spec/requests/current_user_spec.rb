@@ -4,18 +4,19 @@ require_relative "../support/devise"
 
 RSpec.describe 'CurrentUsers', type: :request do
   def login_user
-   
       #@request.env["devise.mapping"] = Devise.mappings[:user]
       user = FactoryBot.create(:user)
       sign_in user
     
   end
+
   describe 'GET /index' do
-   
-    it 'returns http success' do
+
+    it 'returns http success for login registerd user' do
       login_user
       get '/current_user'
       expect(response).to have_http_status(:success)
-    end
+    end 
+  
   end
 end
